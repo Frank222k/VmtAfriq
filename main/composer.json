@@ -54,7 +54,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Botble\\Affiliate\\": "platform/plugins/affiliate/src/"
         }
     },
     "autoload-dev": {

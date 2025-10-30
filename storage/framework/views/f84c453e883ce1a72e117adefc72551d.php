@@ -1,1 +1,0 @@
-<?php echo $__env->make('plugins/ecommerce::themes.attributes._layouts-filter.visual', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\platform\themes/martfury/views/ecommerce/attributes/_layouts-filter/visual.blade.php ENDPATH**/ ?>

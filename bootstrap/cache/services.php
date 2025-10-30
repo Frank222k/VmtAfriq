@@ -69,6 +69,8 @@
     65 => 'Yajra\\DataTables\\ButtonsServiceProvider',
     66 => 'Yajra\\DataTables\\HtmlServiceProvider',
     67 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    68 => 'App\\Providers\\AppServiceProvider',
+    69 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -122,6 +124,8 @@
     47 => 'Yajra\\DataTables\\ButtonsServiceProvider',
     48 => 'Yajra\\DataTables\\HtmlServiceProvider',
     49 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    50 => 'App\\Providers\\AppServiceProvider',
+    51 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (

@@ -1,0 +1,9 @@
+{
+    "name": "Affiliate",
+    "namespace": "Botble\\Affiliate\\",
+    "provider": "Botble\\Affiliate\\Providers\\AffiliateServiceProvider",
+    "author": "Botble Technologies",
+    "url": "https://botble.com",
+    "version": "1.0.0",
+    "description": "Affiliate marketing system for ecommerce"
+}

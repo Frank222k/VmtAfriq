@@ -226,6 +226,9 @@
                         <?php if(EcommerceHelper::isWishlistEnabled()): ?>
                             <li><a href="<?php echo e(route('public.wishlist')); ?>"><i class="icon-heart"></i> <span><?php echo e(__('Wishlist')); ?></span></a></li>
                         <?php endif; ?>
+                        <?php if(is_plugin_active('affiliate') && auth('customer')->check()): ?>
+                            <li><a href="<?php echo e(route('customer.affiliate.dashboard')); ?>"><i class="icon-users"></i> <span><?php echo e(__('Affiliate')); ?></span></a></li>
+                        <?php endif; ?>
                         <?php if(count($currencies) > 1): ?>
                             <li class="menu-item-has-children">
                                 <a href="#"><span><?php echo e(get_application_currency()->title); ?></span></a>

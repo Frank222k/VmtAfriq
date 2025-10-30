@@ -209,6 +209,9 @@
                         @if (EcommerceHelper::isWishlistEnabled())
                             <li><a href="{{ route('public.wishlist') }}"><i class="icon-heart"></i> <span>{{ __('Wishlist') }}</span></a></li>
                         @endif
+                        @if (is_plugin_active('affiliate') && auth('customer')->check())
+                            <li><a href="{{ route('customer.affiliate.dashboard') }}"><i class="icon-users"></i> <span>{{ __('Affiliate') }}</span></a></li>
+                        @endif
                         @if (count($currencies) > 1)
                             <li class="menu-item-has-children">
                                 <a href="#"><span>{{ get_application_currency()->title }}</span></a>
