@@ -1,0 +1,2 @@
+<?php echo $__env->make(Theme::getThemeNamespace('views.ecommerce.includes.product-items' . (request()->get('layout') == 'list' ? '-list' : '-grid')), array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php /**PATH C:\xampp\htdocs\platform\themes/martfury/views/ecommerce/includes/product-items.blade.php ENDPATH**/ ?>
