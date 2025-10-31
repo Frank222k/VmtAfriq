@@ -21,8 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias([
-            'affiliate.track' => \Botble\Affiliate\Http\Middleware\TrackAffiliateReferral::class,
+        $middleware->web(append: [
+            \App\Http\Middleware\AffiliateTracker::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

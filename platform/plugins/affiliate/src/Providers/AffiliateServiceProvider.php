@@ -28,6 +28,9 @@ class AffiliateServiceProvider extends ServiceProvider
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('affiliate.track', TrackAffiliateReferral::class);
         
+        // Add to web middleware group
+        $router->pushMiddlewareToGroup('web', TrackAffiliateReferral::class);
+        
         // Add relationship to Customer model
         Customer::resolveRelationUsing('affiliate', function ($customerModel) {
             return $customerModel->hasOne(Affiliate::class, 'user_id');
