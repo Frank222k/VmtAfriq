@@ -25,3 +25,8 @@ Route::post('/logout', function () {
     return redirect('/');
 })->name('customer.logout');
 
+Route::prefix('admin')->group(function () {
+    Route::get('/affiliate-settings', [\App\Http\Controllers\Admin\AffiliateSettingsController::class, 'edit'])->name('admin.affiliate.settings');
+    Route::post('/affiliate-settings', [\App\Http\Controllers\Admin\AffiliateSettingsController::class, 'update'])->name('admin.affiliate.settings.update');
+});
+

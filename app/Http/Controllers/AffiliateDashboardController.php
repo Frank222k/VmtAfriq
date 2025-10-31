@@ -22,18 +22,30 @@ class AffiliateDashboardController extends Controller
             ->where('status', 'active')
             ->first();
         
-        // Debug: Log the query result
-        \Log::info('Affiliate lookup', ['user_id' => $user->id, 'affiliate' => $affiliate]);
-        
         if (!$affiliate || empty($affiliate->affiliate_code)) {
             return redirect()->route('affiliate.register')->with('error', 'You must be a registered affiliate to access the dashboard.');
         }
         
+        // Calculate real earnings from commissions table
+        $totalEarnings = DB::table('ec_affiliate_commissions')
+            ->where('affiliate_id', $affiliate->id)
+            ->sum('commission_amount');
+            
+        $pendingEarnings = DB::table('ec_affiliate_commissions')
+            ->where('affiliate_id', $affiliate->id)
+            ->where('status', 'pending')
+            ->sum('commission_amount');
+            
+        $paidEarnings = DB::table('ec_affiliate_commissions')
+            ->where('affiliate_id', $affiliate->id)
+            ->where('status', 'paid')
+            ->sum('commission_amount');
+        
         $stats = [
-            'total_earnings' => $affiliate->total_earnings ?? 0,
-            'pending_earnings' => $affiliate->pending_earnings ?? 0,
-            'paid_earnings' => $affiliate->paid_earnings ?? 0,
-            'commission_rate' => $affiliate->commission_rate ?? 0,
+            'total_earnings' => $totalEarnings ?: 0,
+            'pending_earnings' => $pendingEarnings ?: 0,
+            'paid_earnings' => $paidEarnings ?: 0,
+            'commission_rate' => setting('affiliate_default_commission_rate', $affiliate->commission_rate ?? 5),
             'affiliate_code' => $affiliate->affiliate_code,
             'referral_link' => url('/?ref=' . $affiliate->affiliate_code)
         ];
@@ -91,7 +103,7 @@ class AffiliateDashboardController extends Controller
         DB::table('ec_affiliates')->insert([
             'user_id' => $user->id,
             'affiliate_code' => $affiliateCode,
-            'commission_rate' => 5.00,
+            'commission_rate' => setting('affiliate_default_commission_rate', 5.00),
             'status' => 'active',
             'created_at' => now(),
             'updated_at' => now()

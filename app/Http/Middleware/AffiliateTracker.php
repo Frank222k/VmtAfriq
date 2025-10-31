@@ -13,7 +13,8 @@ class AffiliateTracker
             $affiliateCode = $request->get('ref') ?: $request->get('affiliate');
             
             session(['affiliate_referral' => $affiliateCode]);
-            cookie()->queue('affiliate_referral', $affiliateCode, 30 * 24 * 60);
+            $cookieDuration = setting('affiliate_cookie_duration', 30) * 24 * 60;
+            cookie()->queue('affiliate_referral', $affiliateCode, $cookieDuration);
         }
         
         return $next($request);

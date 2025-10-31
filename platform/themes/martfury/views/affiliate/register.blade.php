@@ -10,7 +10,7 @@
                         <p>Earn commission by referring customers to our store. Get paid for every sale made through your referral link!</p>
                         
                         <ul class="ps-list--dot">
-                            <li>Earn 5% commission on all sales</li>
+                            <li>Earn {{ setting('affiliate_default_commission_rate', 5) }}% commission on all sales</li>
                             <li>Get your unique referral link</li>
                             <li>Track your earnings in real-time</li>
                             <li>Monthly payouts</li>

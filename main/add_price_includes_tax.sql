@@ -1,0 +1,1 @@
+ALTER TABLE ec_products ADD COLUMN price_includes_tax TINYINT(1) DEFAULT 0;

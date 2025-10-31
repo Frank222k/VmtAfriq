@@ -71,6 +71,7 @@
     67 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     68 => 'App\\Providers\\AppServiceProvider',
     69 => 'App\\Providers\\RouteServiceProvider',
+    70 => 'App\\Providers\\AdminMenuServiceProvider',
   ),
   'eager' => 
   array (
@@ -126,6 +127,7 @@
     49 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     50 => 'App\\Providers\\AppServiceProvider',
     51 => 'App\\Providers\\RouteServiceProvider',
+    52 => 'App\\Providers\\AdminMenuServiceProvider',
   ),
   'deferred' => 
   array (
