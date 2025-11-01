@@ -1,15 +1,15 @@
-@if ($flashSale)
+<?php if($flashSale): ?>
     <div class="ps-deal-of-day">
         <div class="ps-container">
             <div class="ps-section__header">
                 <div class="ps-block--countdown-deal">
                     <div class="ps-block__left">
-                        <h3>{!! isset($title) ? BaseHelper::clean($title) : $flashSale->name !!}</h3>
+                        <h3><?php echo isset($title) ? BaseHelper::clean($title) : $flashSale->name; ?></h3>
                     </div>
                     <div class="ps-block__right">
                         <figure>
-                            <figcaption>{{ __('Ends in') }}:</figcaption>
-                            <ul class="ps-countdown" data-time="{{ $flashSale->end_date }}">
+                            <figcaption><?php echo e(__('Ends in')); ?>:</figcaption>
+                            <ul class="ps-countdown" data-time="<?php echo e($flashSale->end_date); ?>">
                                 <li><span class="days"></span></li>
                                 <li><span class="hours"></span></li>
                                 <li><span class="minutes"></span></li>
@@ -36,14 +36,16 @@
                      data-owl-duration="1000"
                      data-owl-mousedrag="on"
                 >
-                    @foreach($flashSale->products as $product)
-                        @continue(! EcommerceHelper::showOutOfStockProducts() && $product->isOutOfStock())
+                    <?php $__currentLoopData = $flashSale->products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(! EcommerceHelper::showOutOfStockProducts() && $product->isOutOfStock()) continue; ?>
                         <div class="ps-product ps-product--inner">
-                            {!! Theme::partial('flash-sale-product', compact('product', 'flashSale')) !!}
+                            <?php echo Theme::partial('flash-sale-product', compact('product', 'flashSale')); ?>
+
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
     </div>
-@endif
+<?php endif; ?>
+<?php /**PATH C:\xampp\htdocs\platform\themes/martfury/partials/short-codes/flash-sale.blade.php ENDPATH**/ ?>
