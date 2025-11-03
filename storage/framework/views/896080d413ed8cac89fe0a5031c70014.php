@@ -10,6 +10,40 @@
     $videoPosition = theme_option('ecommerce_product_gallery_video_position', 'bottom');
 ?>
 
+<style>
+@media (max-width: 991px) {
+    .bb-mobile-horizontal {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        gap: 8px !important;
+        margin-top: 10px !important;
+        flex-wrap: nowrap !important;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        height: 80px !important;
+        line-height: 2 !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+    .bb-mobile-horizontal::-webkit-scrollbar {
+        display: none !important;
+    }
+    .bb-mobile-horizontal > div {
+        width: 350px !important;
+        height: 350px !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .bb-mobile-horizontal img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+</style>
 <div class="bb-product-gallery-wrapper">
     <div class="<?php echo \Illuminate\Support\Arr::toCssClasses(['bb-product-gallery', 'bb-product-gallery-' . $galleryStyle]); ?>">
         <div class="bb-product-gallery-images">
@@ -36,7 +70,7 @@
                 <?php echo $__env->make(EcommerceHelper::viewPath('includes.product-gallery-video'), array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             <?php endif; ?>
         </div>
-        <div class="bb-product-gallery-thumbnails" data-vertical="<?php echo e($galleryStyle === 'vertical' ? 1 : 0); ?>">
+        <div class="bb-product-gallery-thumbnails bb-mobile-horizontal" data-vertical="<?php echo e($galleryStyle === 'vertical' ? 1 : 0); ?>">
             <?php if($videoPosition == 'top'): ?>
                 <?php echo $__env->make(EcommerceHelper::viewPath('includes.product-gallery-video-thumbnail'), array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             <?php endif; ?>
