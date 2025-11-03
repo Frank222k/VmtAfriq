@@ -1,0 +1,11 @@
+name,import_type,status,country,state,abbreviation,order
+United States,country,published,,,US,0
+California,state,published,United States,,CA,0
+Texas,state,published,United States,,TX,0
+New York,state,published,United States,,NY,0
+Los Angeles,city,published,United States,California,,0
+San Francisco,city,published,United States,California,,0
+Houston,city,published,United States,Texas,,0
+Dallas,city,published,United States,Texas,,0
+New York City,city,published,United States,New York,,0
+Buffalo,city,published,United States,New York,,0
