@@ -319,7 +319,7 @@ class PublicCartController extends BaseController
         return $this
             ->httpResponse()
             ->setData($this->getDataForResponse())
-            ->setMessage(__('Update cart successfully!'));
+            ->setMessage(__('Updated cart successfully!'));
     }
 
     public function destroy(string $id)
