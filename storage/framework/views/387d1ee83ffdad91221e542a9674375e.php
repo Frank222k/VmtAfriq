@@ -1,7 +1,7 @@
 <div class="ps-compare ps-section--shopping pt-40">
     <div class="container">
         <div class="ps-section__header">
-            <h1><?php echo e(__('Compare Product')); ?></h1>
+            <h1><?php echo e(__('Compare Products')); ?></h1>
         </div>
         <div class="ps-section__content">
             <?php if($products->isNotEmpty()): ?>
