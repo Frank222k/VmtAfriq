@@ -13,6 +13,10 @@
 
         {!! Theme::get('topHeader') !!}
 
+        @if (is_plugin_active('ads'))
+            {!! AdsManager::display('before_navbar', ['class' => 'ads-before-navbar']) !!}
+        @endif
+
         <header class="header header--1" data-sticky="{{ Theme::get('stickyHeader', theme_option('sticky_header_enabled', 'yes') == 'yes' ? 'true' : 'false') }}">
             <div class="header__top">
                 <div class="ps-container align-items-center">

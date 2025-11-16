@@ -26,7 +26,7 @@
                 @php $paymentMethods = array_filter(json_decode(theme_option('payment_methods', []), true)); @endphp
                 @if ($paymentMethods)
                     <div class="footer-payments">
-                        <span class="payment-method-title">{{ __('We Using Safe Payment For') }}:</span>
+                        <span class="payment-method-title">{{ __('Accepted Payment Methods') }}:</span>
                         <p class="d-sm-inline-block d-block">
                             @if (theme_option('payment_methods_link'))
                                 <a href="{{ url(theme_option('payment_methods_link')) }}" target="_blank">

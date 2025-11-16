@@ -29,7 +29,7 @@
                 <?php $paymentMethods = array_filter(json_decode(theme_option('payment_methods', []), true)); ?>
                 <?php if($paymentMethods): ?>
                     <div class="footer-payments">
-                        <span class="payment-method-title"><?php echo e(__('We Using Safe Payment For')); ?>:</span>
+                        <span class="payment-method-title"><?php echo e(__('Accepted Payment Methods')); ?>:</span>
                         <p class="d-sm-inline-block d-block">
                             <?php if(theme_option('payment_methods_link')): ?>
                                 <a href="<?php echo e(url(theme_option('payment_methods_link'))); ?>" target="_blank">

@@ -1,0 +1,2 @@
+<?php echo $__env->make('plugins/ecommerce::themes.customers.orders.view', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php /**PATH C:\xampp\htdocs\platform\themes/martfury/views/ecommerce/customers/orders/view.blade.php ENDPATH**/ ?>

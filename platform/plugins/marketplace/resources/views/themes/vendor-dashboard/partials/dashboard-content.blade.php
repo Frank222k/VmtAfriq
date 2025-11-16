@@ -57,7 +57,7 @@
                     <div class="col-6">
                         <a href="{{ route('marketplace.vendor.discounts.create') }}" class="btn btn-outline-info w-100 d-flex align-items-center justify-content-center gap-1">
                             <x-core::icon name="ti ti-discount-2" />
-                            <span class="d-none d-sm-inline">{{ __('Create Discount') }}</span>
+                            <span class="d-none d-sm-inline">{{ __('Add Discount') }}</span>
                             <span class="d-inline d-sm-none">{{ __('Discount') }}</span>
                         </a>
                     </div>

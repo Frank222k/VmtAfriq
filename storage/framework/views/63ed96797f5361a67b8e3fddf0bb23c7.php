@@ -16,6 +16,11 @@
         <?php echo Theme::get('topHeader'); ?>
 
 
+        <?php if(is_plugin_active('ads')): ?>
+            <?php echo AdsManager::display('before_navbar', ['class' => 'ads-before-navbar']); ?>
+
+        <?php endif; ?>
+
         <header class="header header--1" data-sticky="<?php echo e(Theme::get('stickyHeader', theme_option('sticky_header_enabled', 'yes') == 'yes' ? 'true' : 'false')); ?>">
             <div class="header__top">
                 <div class="ps-container align-items-center">

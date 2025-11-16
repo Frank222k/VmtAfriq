@@ -68,6 +68,7 @@ app()->booted(function (): void {
     if (is_plugin_active('ads')) {
         AdsManager::registerLocation('top-slider-image-1', __('Top Slider Image 1 (deprecated)'))
             ->registerLocation('top-slider-image-2', __('Top Slider Image 2 (deprecated)'))
-            ->registerLocation('product-sidebar', __('Product sidebar'));
+            ->registerLocation('product-sidebar', __('Product sidebar'))
+            ->registerLocation('before_navbar', __('Before Navbar'));
     }
 });
