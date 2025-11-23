@@ -23,7 +23,7 @@ class ForgotPasswordForm extends AuthForm
             ->setValidatorClass(ForgotPasswordRequest::class)
             ->icon('ti ti-lock-question')
             ->heading(__('Forgot Password'))
-            ->description(__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.'))
+            ->description(__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via your registered email email.'))
             ->add(
                 'email',
                 EmailField::class,
